@@ -1,0 +1,14 @@
+svg
+{
+  background-color: #ddd;
+}
+
+body
+{
+  margin: 0px;
+}
+
+.no-events
+{
+  pointer-events: none;
+}
