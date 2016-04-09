@@ -71,11 +71,32 @@ Piece.Get = function(piece, nation)
     .addTo(group)
   }
   
+  var nationId = nation.name.replace(' ', '').replace('-', '');
+  nationId = nationId.substring(0, 1).toLowerCase() + nationId.substring(1)
+  
   group
     .stroke(Piece.style.stroke)
     .stroke(nation.pieceColor.dark)
+    .data('nation', nationId)
     .on('mouseover', OnPieceMouseOver)
     .on('mouseout', OnPieceMouseOut)
     
     return group;
+}
+
+function OnPieceMouseOver()
+{
+  this
+    .front()
+    .animate({ease: '<>', duration: 100})
+    .stroke({color: '#fff', width: 1});
+    
+    console.log()
+}
+
+function OnPieceMouseOut()
+{
+  this
+    .animate({ease: '<>', duration: 200})
+    .stroke({color: Nation[this.data('nation')].pieceColor.dark, width: 0.5})
 }
