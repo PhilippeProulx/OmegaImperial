@@ -1,0 +1,1 @@
+if (typeof Style == 'undefined'){  var Style = {}}Style.piece ={  stroke: {linejoin: 'round', linecap: 'round', width: 0.5},  highlight:   {    animation : {ease: '<>', duration: 200},     stroke : {width: 1, color: '#fff'}  }}
