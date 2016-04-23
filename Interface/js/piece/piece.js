@@ -15,4 +15,10 @@ class Piece
   }
 }
 
+Piece.Flag    = new EnumItem('Flag')
+Piece.Army    = new EnumItem('Army')
+Piece.Factory = new EnumItem('Factory')
+Piece.Fleet   = new EnumItem('Fleet')
+Piece.Marker  = new EnumItem('Marker')
+
 Piece.All = new Array()
