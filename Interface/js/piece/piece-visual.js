@@ -11,19 +11,27 @@ class PieceVisual
   
   InitializeSvg()
   {
+    if (typeof PieceVisual.allGroup == 'undefined')
+    {
+      PieceVisual.allGroup = draw.group()
+    }
+  
     this.svgGroup = draw.group()
-    
-    for (let shape of Definition.piece[this.piece.type].shapes) 
+      .addTo(PieceVisual.allGroup)
+      
+    for (let shape of this.piece.definition.shapes) 
     {
       var newpath = draw.path()
       .plot(shape.path)
-      .fill(shape.light ? this.piece.nation.pieceColor.light : this.piece.nation.pieceColor.shadow)
+      .fill(shape.light ? 
+        this.piece.nation.style.pieceColor.light : 
+        this.piece.nation.style.pieceColor.shadow)
       .addTo(this.svgGroup);
     }
     
     this.svgGroup
-      .stroke(Style.piece.stroke)
-      .stroke(this.piece.nation.pieceColor.dark)
+      .stroke(this.piece.style.stroke)
+      .stroke(this.piece.nation.style.pieceColor.dark)
       .on('mouseover', () => this.OnMouseEnter())
       .on('mouseout', () => this.OnMouseExit())
       .on('click', () => this.OnClick())
@@ -34,28 +42,28 @@ class PieceVisual
   {
     this.svgGroup
       .front()
-      .animate({ease: Style.piece.highlight.animation.ease, 
-                duration: Style.piece.highlight.animation.duration})
-      .stroke({color: Style.piece.highlight.stroke.color, 
-               width: Style.piece.highlight.stroke.width});
+      .animate({ease    : this.piece.style.highlight.animation.ease, 
+                duration: this.piece.style.highlight.animation.duration})
+      .stroke({color: this.piece.style.highlight.stroke.color, 
+               width: this.piece.style.highlight.stroke.width});
   }
 
   OnMouseExit()
   {
     this.svgGroup
-      .animate({ease: Style.piece.highlight.animation.ease, 
-                duration: Style.piece.highlight.animation.duration})
-      .stroke({color: this.piece.nation.pieceColor.dark, 
-               width: Style.piece.highlight.stroke.width});
+      .animate({ease    : this.piece.style.highlight.animation.ease, 
+                duration: this.piece.style.highlight.animation.duration})
+      .stroke({color: this.piece.nation.style.pieceColor.dark, 
+               width: this.piece.style.stroke.width});
   }
   
   OnClick()
   {
-    console.log("OnClick " + this.ToString())
+    console.log("OnClick " + this.toString())
   }
   
-  ToString() 
+  toString() 
   {
-    return `PieceVisual (${this.piece.type.name}, ${this.x}, ${this.y})`;
+    return `Visual of ${this.piece.toString()}`;
   }
 }

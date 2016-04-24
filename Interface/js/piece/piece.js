@@ -4,21 +4,18 @@ class Piece
   {
     this.type = type
     this.nation = nation
+    this.style = Style.piece
+    this.definition = Definition.piece[type]
     
     this.visual = new PieceVisual(this, x, y);
-    Piece.All.push(this)
+    
+    Piece.all.push(this)
   }
   
-  ToString() 
+  toString() 
   {
     return `Piece (${this.type.name}, ${this.visual.x}, ${this.visual.y})`;
   }
 }
 
-Piece.Flag    = new EnumItem('Flag')
-Piece.Army    = new EnumItem('Army')
-Piece.Factory = new EnumItem('Factory')
-Piece.Fleet   = new EnumItem('Fleet')
-Piece.Marker  = new EnumItem('Marker')
-
-Piece.All = new Array()
+Piece.all = new Array()
