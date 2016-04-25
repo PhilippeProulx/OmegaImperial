@@ -2,23 +2,31 @@ var draw = SVG('board').size(1366, 768);
 
 let board = new Board()
 
-board.AddPiece(PieceType.Flag, Nation.GreatBritain)
-board.AddPiece(PieceType.Flag, Nation.Italy)
-board.AddPiece(PieceType.Flag, Nation.France)
-board.AddPiece(PieceType.Flag, Nation.Russia)
-board.AddPiece(PieceType.Flag, Nation.GreatBritain)
-board.AddPiece(PieceType.Flag, Nation.GreatBritain)
-board.AddPiece(PieceType.Flag, Nation.GreatBritain)
-board.AddPiece(PieceType.Flag, Nation.GreatBritain)
+// board.AddPiece(PieceType.Flag, Nation.GreatBritain)
+// board.AddPiece(PieceType.Flag, Nation.Italy)
+// board.AddPiece(PieceType.Flag, Nation.France)
+// board.AddPiece(PieceType.Flag, Nation.Russia)
+// board.AddPiece(PieceType.Flag, Nation.GreatBritain)
+// board.AddPiece(PieceType.Flag, Nation.GreatBritain)
+// board.AddPiece(PieceType.Flag, Nation.GreatBritain)
+// board.AddPiece(PieceType.Flag, Nation.GreatBritain)
 
-board.pieces[0].Move(Region.Berlin)
-board.pieces[1].Move(Region.Berlin)
-board.pieces[2].Move(Region.Berlin)
-board.pieces[1].Move(Region.Hamburg)
-board.pieces[3].Move(Region.Berlin)
-board.pieces[1].Move(Region.Berlin)
-board.pieces[2].Move(Region.Hamburg)
-board.pieces[2].Move(Region.Hamburg)
+// board.pieces[0].Move(Region.Berlin)
+// board.pieces[1].Move(Region.Berlin)
+// board.pieces[2].Move(Region.Berlin)
+// board.pieces[1].Move(Region.Hamburg)
+// board.pieces[3].Move(Region.Berlin)
+// board.pieces[1].Move(Region.Berlin)
+// board.pieces[2].Move(Region.Hamburg)
+// board.pieces[2].Move(Region.Hamburg)
+
+board.regions.forEach(region => 
+{
+  for (i = 0; i < 8; i++) 
+  { 
+    board.AddPiece(PieceType.Flag, Nation.France).Move(region)
+  }
+})
 
 // board.AddPiece(PieceType.Flag, Nation.GreatBritain, Region.Hamburg)
 // board.AddPiece(PieceType.Flag, Nation.GreatBritain, Region.Hamburg)
