@@ -1,10 +1,11 @@
 class PieceVisual 
 {
-  constructor(piece, x, y) 
+  constructor(piece) 
   {
     this.piece = piece
-    this.x = x
-    this.y = y
+    
+    this.x = 600
+    this.y = 600
     
     this.InitializeSvg()
   }
@@ -35,7 +36,13 @@ class PieceVisual
       .on('mouseover', () => this.OnMouseEnter())
       .on('mouseout', () => this.OnMouseExit())
       .on('click', () => this.OnClick())
-      .translate(this.x, this.y);
+
+    this.Move(this.x, this.y)
+  }
+  
+  Move(point)
+  {
+    this.svgGroup.translate(point.x, point.y);
   }
   
   OnMouseEnter()

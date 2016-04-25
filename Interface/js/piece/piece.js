@@ -1,15 +1,26 @@
 class Piece
 {
-  constructor(type, nation, x, y) 
+  constructor(type, nation) 
   {
     this.type = type
     this.nation = nation
     this.style = Style.piece
     this.definition = Definition.piece[type]
+    this.position = null
+    this.visual = new PieceVisual(this);
+  }
+  
+  Move(region)
+  {
+    if (this.position != null && typeof this.position != 'undefined')
+    {
+      this.position.UnassignPieceFromSlot(this)
+    }
     
-    this.visual = new PieceVisual(this, x, y);
+    var slotId = region.AssignPieceToSlot(this)
+    this.position = region
     
-    Piece.all.push(this)
+    this.visual.Move(region.definition.pieceSlots[slotId])
   }
   
   toString() 
@@ -17,5 +28,3 @@ class Piece
     return `Piece (${this.type.name}, ${this.visual.x}, ${this.visual.y})`;
   }
 }
-
-Piece.all = new Array()

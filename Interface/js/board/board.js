@@ -10,7 +10,6 @@ class Board
     
     this.InitializeNations()
     this.InitializeRegions()
-    //this.InitializePieces()
   }  
 
   InitializeNations()
@@ -29,9 +28,12 @@ class Board
     }
   }
   
-  AddPiece(pieceType, nation, x, y)
+  AddPiece(pieceType, nation)
   {
-    this.pieces.push(new Piece(pieceType, nation, x + 500, y + 150))
+    let newPiece = new Piece(pieceType, nation)
+    this.pieces.push(newPiece)
+    
+    return newPiece
   }
 
   toString() 
