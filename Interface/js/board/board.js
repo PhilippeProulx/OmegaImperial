@@ -16,7 +16,7 @@ class Board
   {
     for (const nation of NationId.enumValues) 
     {
-      this.regions.push(new Nation(nation))
+      this.nations.push(new Nation(nation))
     }
   }
 
@@ -24,7 +24,7 @@ class Board
   {
     for (const region of RegionId.enumValues) 
     {
-      this.nations.push(new Region(region))
+      this.regions.push(new Region(region))
     }
   }
   
