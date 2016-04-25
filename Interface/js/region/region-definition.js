@@ -1,6 +1,6 @@
 class RegionId extends Enum {} RegionId.initEnum(
   ['Berlin', 'Cologne', 'Hamburg', 'Munich', 'Gbansk',
-   'Paris', 'Dijon', 'Brest', 'Marseille', 'Boardeaux',
+   'Paris', 'Dijon', 'Brest', 'Marseille', 'Bordeaux',
    'Holland', 'Belgium']);
 
 if (typeof Definition == 'undefined')
@@ -109,10 +109,10 @@ Definition.region[RegionId.Marseille] =
                new Point(675, 595), new Point(645, 600)]
 }
 
-Definition.region[RegionId.Boardeaux] =
+Definition.region[RegionId.Bordeaux] =
 {
   shape: 'm 601.54584,614.96615 -7.3236,5.80838 -9.59645,-3.283 -20.45559,-7.07107 -2.27284,-5.55584 -15.40483,-2.77791 -1.26269,-13.38453 8.83883,-6.06091 7.82869,-25.00128 5.3033,-18.43528 5.55584,-21.46574 6.31345,6.06091 9.09137,27.7792 -4.29315,-28.03174 -9.09137,-19.19289 3.283,-9.09138 -2.52538,-8.33376 3.53553,-3.28299 7.07107,-1.51523 3.03045,5.55584 17.1726,8.83883 7.07107,0.75762 5.3033,-2.77792 6.81853,0.25254 16.41498,8.33376 7.07106,1.76776 8.5863,11.61676 13.63706,0.75761 10.85914,9.34391 -2.27284,10.10153 1.01015,7.57614 -5.80838,11.61676 -23.99112,1.76776 -5.80838,13.13199 -8.08122,2.0203 -4.04061,7.07107 -10.6066,0.50508 -6.56599,4.29314 0.50507,11.36422 -12.87944,5.55584 z',
-  nationId: NationId.France, name: 'Boardeaux', namePosition: {x: 630, y: 520},
+  nationId: NationId.France, name: 'Bordeaux', namePosition: {x: 630, y: 520},
   pieceSlots: [new Point(600, 515), new Point(630, 515), new Point(635, 555), 
                new Point(605, 560), new Point(575, 565), new Point(570, 590),
                new Point(600, 585), new Point(665, 535)]
