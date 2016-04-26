@@ -5,7 +5,7 @@ class Board
     this.nations = new Array()
     this.regions = new Array()
     this.pieces = new Array()
-    
+
     this.InitializeNations()
     this.InitializeRegions()
   }  
@@ -40,4 +40,7 @@ class Board
   }
 }
 
-
+Board.visual =
+{
+  offset: {x: -20, y: 60}
+}

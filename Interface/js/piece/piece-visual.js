@@ -4,9 +4,6 @@ class PieceVisual
   {
     this.piece = piece
     
-    this.x = 600
-    this.y = 600
-    
     this.InitializeSvg()
   }
   
@@ -36,13 +33,11 @@ class PieceVisual
       .on('mouseover', () => this.OnMouseEnter())
       .on('mouseout', () => this.OnMouseExit())
       .on('click', () => this.OnClick())
-
-    this.Move(this.x, this.y)
   }
   
   Move(point)
   {
-    this.svgGroup.translate(point.x, point.y);
+    this.svgGroup.translate(point.x + Board.visual.offset.x, point.y + Board.visual.offset.y)
   }
   
   OnMouseEnter()
