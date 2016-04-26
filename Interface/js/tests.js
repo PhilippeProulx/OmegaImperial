@@ -1,7 +1,7 @@
 function TestBoardMove()
 {
   board.AddPiece(PieceType.Flag, Nation.GreatBritain)
-  board.AddPiece(PieceType.Flag, Nation.Italy)
+  board.AddPiece(PieceType.Marker, Nation.Italy)
   board.AddPiece(PieceType.Flag, Nation.France)
   board.AddPiece(PieceType.Flag, Nation.Russia)
   board.AddPiece(PieceType.Flag, Nation.GreatBritain)
