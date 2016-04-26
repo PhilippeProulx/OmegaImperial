@@ -1,6 +1,7 @@
 class NationId extends Enum {} NationId.initEnum(
   ['GreatBritain', 'AustriaHungary', 'Italy', 
-  'France', 'GermanEmpire', 'Russia', 'Neutral']);
+  'France', 'GermanEmpire', 'Russia', 
+  'Neutral', 'Sea']);
 
 if (typeof Definition == 'undefined')
 {
@@ -42,4 +43,9 @@ Definition.nation[NationId.Russia] =
 Definition.nation[NationId.Neutral] =
 {
   name : 'Neutral'
+}
+
+Definition.nation[NationId.Sea] =
+{
+  name : 'Sea'
 }
