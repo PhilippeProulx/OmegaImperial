@@ -6,21 +6,23 @@ class Piece
     this.nation = nation
     this.style = Style.piece
     this.definition = Definition.piece[type]
-    this.position = null
+    this.slot = null
     this.visual = new PieceVisual(this);
+    
+    Piece.all.push(this)
   }
   
   Move(region)
   {
-    if (this.position != null && typeof this.position != 'undefined')
+    if (this.slot != null && typeof this.slot != 'undefined')
     {
-      this.position.UnassignPieceFromSlot(this)
+      this.slot.UnassignPieceFromSlot(this)
     }
     
-    var slotId = region.AssignPieceToSlot(this)
-    this.position = region
+    this.slot = region
     
-    this.visual.Move(region.definition.pieceSlots[slotId])
+    let newPosition = region.AssignPieceToSlot(this)
+    this.visual.Move(newPosition)
   }
   
   toString() 
@@ -28,3 +30,5 @@ class Piece
     return `Piece (${this.type.name}, ${this.visual.x}, ${this.visual.y})`;
   }
 }
+
+Piece.all = new Array()

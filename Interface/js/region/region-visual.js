@@ -23,7 +23,7 @@ class RegionVisual
   
     this.svg.group
       .addTo(RegionVisual.allGroup)
-      .translate(Board.visual.offset.x, Board.visual.offset.y)
+      .translate(Map.visual.offset.x, Map.visual.offset.y)
 
     this.svg.region
       .plot(this.region.definition.shape)

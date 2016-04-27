@@ -1,31 +1,22 @@
-class Region
+class Region extends Container
 {
   constructor(id) 
   {
+    super()
     this.id = id
     this.style = Style.region
     this.definition = Definition.region[id]
     this.nation = Nation[this.definition.nationId.name]
-    this.pieceSlots = new Array()
     this.visual = new RegionVisual(this);
     
     Region[id.name] = this
+    Region.all.push(this)
   }
   
-  AssignPieceToSlot(piece)
+  //override from PieceSlot
+  GetSlotPosition(id)
   {
-    let i = 0
-    for (; i < this.pieceSlots.length && this.pieceSlots[i] != null; i++) {}
-    this.pieceSlots[i] = piece
-    
-    return i;
-  }
-  
-  UnassignPieceFromSlot(piece)
-  {
-    let pieceSlotId = this.pieceSlots.findIndex(pieceSlot => pieceSlot == piece)
-    this.pieceSlots[pieceSlotId] = null
-    console.log(this.pieceSlots)
+    return this.definition.pieceSlots[id];
   }
   
   toString() 
@@ -33,3 +24,5 @@ class Region
     return `region (${this.id})`;
   }
 }
+
+Region.all = new Array()

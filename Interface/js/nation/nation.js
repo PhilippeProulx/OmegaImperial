@@ -7,5 +7,8 @@ class Nation
     this.definition = Definition.nation[id]
     
     Nation[id.name] = this
+    Nation.all.push(this)
   }
 }
+
+Nation.all = new Array()

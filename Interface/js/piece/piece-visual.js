@@ -37,7 +37,9 @@ class PieceVisual
   
   Move(point)
   {
-    this.svgGroup.translate(point.x + Board.visual.offset.x, point.y + Board.visual.offset.y)
+    this.x = point.x + Map.visual.offset.x
+    this.y = point.y + Map.visual.offset.y
+    this.svgGroup.translate(this.x, this.y)
   }
   
   OnMouseEnter()
