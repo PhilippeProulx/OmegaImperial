@@ -4,6 +4,7 @@ class Game
   {
     this.InitializeNations()
     this.map = new Map()
+    this.scoringTrack = new ScoringTrack()
   }  
 
   InitializeNations()

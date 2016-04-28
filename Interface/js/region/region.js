@@ -13,7 +13,7 @@ class Region extends Container
     Region.all.push(this)
   }
   
-  //override from PieceSlot
+  //override from Container
   GetSlotPosition(id)
   {
     return this.definition.pieceSlots[id];
