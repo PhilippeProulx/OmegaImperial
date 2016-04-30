@@ -1,7 +1,11 @@
+var draw;
+
 class Map
 {
   constructor() 
   {
+    draw = SVG('board').size(1660, 1120)
+  
     this.InitializeRegions()
   }  
 

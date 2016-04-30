@@ -1,10 +1,3 @@
-class RegionId extends Enum {} RegionId.initEnum(
-  ['Berlin', 'Cologne', 'Hamburg', 'Munich', 'Gbansk',
-   'Paris', 'Dijon', 'Brest', 'Marseille', 'Bordeaux',
-   'StPetersburg',
-   'Holland', 'Belgium', 'Spain', 'Morocco',
-   'BlackSea']);
-
 if (typeof Definition == 'undefined')
 {
   var Definition = {}

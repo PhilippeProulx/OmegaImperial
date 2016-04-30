@@ -13,7 +13,7 @@ class PieceVisual
     {
       PieceVisual.allGroup = draw.group()
     }
-  
+    //todo: rename this to svg.group
     this.svgGroup = draw.group()
       .addTo(PieceVisual.allGroup)
       
@@ -69,5 +69,11 @@ class PieceVisual
   toString() 
   {
     return `Visual of ${this.piece.toString()}`;
+  }
+  
+  Destroy()
+  {
+    this.svgGroup.remove()
+    delete this
   }
 }

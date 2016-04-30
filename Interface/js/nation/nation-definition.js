@@ -1,8 +1,3 @@
-class NationId extends Enum {} NationId.initEnum(
-  ['GreatBritain', 'AustriaHungary', 'Italy', 
-  'France', 'GermanEmpire', 'Russia', 
-  'Neutral', 'Sea']);
-
 if (typeof Definition == 'undefined')
 {
   var Definition = {}

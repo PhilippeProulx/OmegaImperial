@@ -1,3 +1,4 @@
+//TODO: improve game flow and pieces/map creation, Piece.All should go in Map class?
 class Game
 {
   constructor() 
@@ -5,6 +6,8 @@ class Game
     this.InitializeNations()
     this.map = new Map()
     this.scoringTrack = new ScoringTrack()
+    
+    Game.all.push(this)
   }  
 
   InitializeNations()
@@ -28,4 +31,6 @@ class Game
     return 'Game';
   }
 }
+
+Game.all = new Array()
 

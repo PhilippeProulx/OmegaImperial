@@ -17,6 +17,8 @@ class Container
     for (; i < this.slots.length && this.slots[i] != null; i++) {}
     this.slots[i] = piece
     
+    //this.RearrangeZIndex()
+    
     return this.GetSlotPosition(i);
   }
   
@@ -26,6 +28,17 @@ class Container
     this.slots[slotsId] = null
   }
   
+  // RearrangeZIndex()
+  // {
+    // for(let i = 1; i < this.slots.length; i++)
+    // {
+      // for(let j = i - 1; this.slots[i].visual.y < this.slots[j].visual.y && j >= 0; j--)
+      // {
+          // this.slots[i].visual.svgGroup.backward()
+      // }
+    // }
+  // }
+
   toString() 
   {
     return 'Container';

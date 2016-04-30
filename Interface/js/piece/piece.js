@@ -8,21 +8,37 @@ class Piece
     this.definition = Definition.piece[type]
     this.slot = null
     this.visual = new PieceVisual(this);
+    this.id = Piece.all.length
     
     Piece.all.push(this)
   }
   
   Move(region)
   {
-    if (this.slot != null && typeof this.slot != 'undefined')
-    {
-      this.slot.UnassignPieceFromSlot(this)
-    }
+    this._UnassignSlot()
     
     this.slot = region
     
     let newPosition = region.AssignPieceToSlot(this)
     this.visual.Move(newPosition)
+    
+    return this
+  }
+  
+  Destroy()
+  {
+    this._UnassignSlot()
+    
+    this.visual.Destroy()
+    delete this
+  }
+  
+  _UnassignSlot()
+  {
+    if (this.slot != null && typeof this.slot != 'undefined')
+    {
+      this.slot.UnassignPieceFromSlot(this)
+    }
   }
   
   toString() 
