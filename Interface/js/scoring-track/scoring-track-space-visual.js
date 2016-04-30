@@ -1,21 +1,44 @@
-class ScoringTrackVisual 
+class ScoringTrackSpaceVisual 
 {
-  constructor(id, scoringTrack) 
+  //rename scoringTrack to scoringTrackSpace
+  constructor(scoringTrack) 
   {
     this.scoringTrack = scoringTrack
+    let id = scoringTrack.id
     
     let smallWidth = (scoringTrack.definition.right - scoringTrack.definition.left) / (scoringTrack.definition.spaceCount - 2 + 2 * scoringTrack.definition.smallBigSpaceRatio)
     let bigWidth = smallWidth * scoringTrack.definition.smallBigSpaceRatio
 
-    let rectangle = new Rectangle()
+    this.rectangle = new Rectangle()
     
-    rectangle.x = scoringTrack.definition.left + id.clamp(0, 1) * bigWidth + (id - 1).clamp(0, scoringTrack.definition.spaceCount) * smallWidth
+    this.rectangle.x = scoringTrack.definition.left + id.clamp(0, 1) * bigWidth + (id - 1).clamp(0, scoringTrack.definition.spaceCount) * smallWidth
     
-    rectangle.y = id == 0 ? scoringTrack.definition.top : scoringTrack.definition.top + scoringTrack.definition.powerFactorHeight
-    rectangle.width = id == 0 || id == scoringTrack.definition.spaceCount - 1 ? bigWidth : smallWidth
-    rectangle.height = id == 0 ? scoringTrack.definition.bottom - scoringTrack.definition.top : scoringTrack.definition.bottom - scoringTrack.definition.top - scoringTrack.definition.powerFactorHeight
+    this.rectangle.y = id == 0 ? scoringTrack.definition.top : scoringTrack.definition.top + scoringTrack.definition.powerFactorHeight
+    this.rectangle.width = id == 0 || id == scoringTrack.definition.spaceCount - 1 ? bigWidth : smallWidth
+    this.rectangle.height = id == 0 ? scoringTrack.definition.bottom - scoringTrack.definition.top : scoringTrack.definition.bottom - scoringTrack.definition.top - scoringTrack.definition.powerFactorHeight
     
-    this.InitializeSvg(id, rectangle)
+    this.InitializeSvg(id, this.rectangle)
+  }
+  
+  GetSlotPosition(id)
+  {
+    let x = 0
+    let y = 0
+    
+    switch(id) 
+    {
+      case 1: x = 0; y = 2; break;
+      case 2: x = 2; y = 0; break;
+      case 3: x = 2; y = 2; break;
+      case 4: x = 0; y = 1; break;
+      case 5: x = 2; y = 1; break;
+    }
+ 
+    let position = new Point(
+      (this.rectangle.x - Map.visual.offset.x) + (this.rectangle.width / 4 * (x + 1)),
+      (this.rectangle.y - Map.visual.offset.y) + (this.rectangle.height / 4 * (y + 1)))
+      
+    return position
   }
   
   InitializeSvg(id, rectangle)
@@ -48,7 +71,7 @@ class ScoringTrackVisual
       }
     }
     this.svg.text
-      .text((id + 1).toString())
+      .text((id).toString())
       .translate(rectangle.width / 2, 0)
       .addClass('no-events')
       .font(this.scoringTrack.style.font)
