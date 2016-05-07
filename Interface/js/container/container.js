@@ -18,7 +18,7 @@ class Container
     this.slots[i] = piece
     
     //this.RearrangeZIndex()
-    
+    piece.visual.svgGroup.front()
     return this.GetSlotPosition(i);
   }
   
