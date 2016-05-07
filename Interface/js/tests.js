@@ -2,6 +2,7 @@ function RunTests()
 {
   TestMainController()
   //TestRegionSlots()
+  //TestRondelFull()
 }
 
 function TestMainController()
@@ -32,6 +33,23 @@ function TestMainController()
   controller.SetTaxLevel(Nation.AustriaHungary, 5)
   controller.SetTaxLevel(Nation.Russia, 6)
   
+  controller.SetRondelSpace(Nation.France, 0)
+  controller.SetRondelSpace(Nation.Italy, 2)
+  controller.SetRondelSpace(Nation.Russia, 3)
+}
+
+function TestRondelFull()
+{
+  let space = 0
+  for(var i = 0; i < 2; i++)
+  {
+    controller.SetRondelSpace(Nation.France, space)
+    controller.SetRondelSpace(Nation.Italy, space)
+    controller.SetRondelSpace(Nation.GermanEmpire, space)
+    controller.SetRondelSpace(Nation.GreatBritain, space)
+    controller.SetRondelSpace(Nation.AustriaHungary, space)
+    controller.SetRondelSpace(Nation.Russia, space)
+  }
 }
 
 function TestRegionSlots()

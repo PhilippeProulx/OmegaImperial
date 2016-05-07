@@ -7,6 +7,7 @@ class Game
     this.map = new Map()
     this.scoringTrack = new ScoringTrack()
     this.taxChart = new TaxChart()
+    this.rondel = new Rondel()
     
     Game.all.push(this)
   }  

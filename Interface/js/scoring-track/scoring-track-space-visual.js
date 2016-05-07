@@ -52,6 +52,7 @@ class ScoringTrackSpaceVisual
 
     this.svg.group
       .translate(rectangle.x, rectangle.y)
+      .back()
 
     this.svg.space
       .stroke(this.scoringTrack.style.stroke)

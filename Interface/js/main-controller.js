@@ -75,4 +75,8 @@ class MainController
     this.game.taxChart.SetTaxLevel(nation, level)
   }
   
+  SetRondelSpace(nation, space)
+  {
+    this.game.rondel.SetSpace(nation, space)
+  }
 }
