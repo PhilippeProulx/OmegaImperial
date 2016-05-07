@@ -24,6 +24,14 @@ function TestMainController()
   controller.SetPoints(Nation.France, 0)
   controller.SetPoints(Nation.Italy, 2)
   controller.SetPoints(Nation.GermanEmpire, 4)
+  
+  controller.SetTaxLevel(Nation.France, 16)
+  controller.SetTaxLevel(Nation.Italy, 10)
+  controller.SetTaxLevel(Nation.GermanEmpire, 8)
+  controller.SetTaxLevel(Nation.GreatBritain, 4)
+  controller.SetTaxLevel(Nation.AustriaHungary, 5)
+  controller.SetTaxLevel(Nation.Russia, 6)
+  
 }
 
 function TestRegionSlots()

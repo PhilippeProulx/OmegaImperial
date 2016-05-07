@@ -69,4 +69,10 @@ class MainController
   {
     this.game.scoringTrack.SetPoints(nation, points)
   }
+  
+  SetTaxLevel(nation, level)
+  {
+    this.game.taxChart.SetTaxLevel(nation, level)
+  }
+  
 }

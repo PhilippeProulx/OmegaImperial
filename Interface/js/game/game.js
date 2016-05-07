@@ -6,6 +6,7 @@ class Game
     this.InitializeNations()
     this.map = new Map()
     this.scoringTrack = new ScoringTrack()
+    this.taxChart = new TaxChart()
     
     Game.all.push(this)
   }  
