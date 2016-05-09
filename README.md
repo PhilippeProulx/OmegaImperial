@@ -1,3 +1,9 @@
+Requirements
+------------
+
+* [NodeJs](https://nodejs.org/) 6+
+
+
 Install
 -------
 
