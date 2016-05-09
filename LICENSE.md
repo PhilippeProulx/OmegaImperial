@@ -1,6 +1,7 @@
 The MIT License (MIT)
 
-Copyright (c) 2016 PhilippeProulx
+Copyright (c) 2016 Philippe Proulx <philippe.proulx.2@gmail.com>
+               and Philippe Desjardins-Proulx <philippe.d.proulx@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
